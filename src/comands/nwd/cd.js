@@ -1,5 +1,5 @@
-import {resolve} from "path";
-import {chdir} from "process";
+import { resolve } from "path";
+import { chdir } from "process";
 
 export const cd = (path) => {
   if (!path) {

@@ -8,7 +8,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-const username = getUserName();
+export const username = getUserName();
 
 console.log(`Welcome to the File Manager, ${username}`);
 console.log(`You are currently in ${homedir()}`);

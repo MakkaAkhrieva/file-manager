@@ -13,10 +13,9 @@ export const add = async (fileName) => {
     await fs.access(filePath);
     throw new Error("FS operation failed");
   } catch (err) {
-    console.log(err.code);
     if (err.code === "ENOENT") {
       try {
-        await fs.writeFile(filePath, "I am fresh and young", {flag: "wx"});
+        await fs.writeFile(filePath, "", {flag: "wx"});
         console.log("File created successfully!");
       } catch (err) {
         throw err;
