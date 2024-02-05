@@ -7,6 +7,7 @@ import { rn } from "../comands/fs/rn.js";
 import { cd } from "../comands/nwd/cd.js";
 import { ls } from "../comands/nwd/ls.js";
 import { up } from "../comands/nwd/up.js";
+import { osHandlers } from "../comands/os/osHandlers.js";
 import { close } from "./closeHandler.js";
 
 export const handleCommands = async (line) => {
@@ -42,6 +43,21 @@ export const handleCommands = async (line) => {
       break;
     case "rm":
       remove(arg1);
+      break;
+    case "--EOL":
+      osHandlers.eol();
+      break;
+    case "--cpus":
+      osHandlers.cpus();
+      break;
+    case "--homedir":
+      osHandlers.homedir();
+      break;
+    case "--username":
+      osHandlers.userName();
+      break;
+    case "--architecture":
+      osHandlers.architecture();
       break;
     default:
       console.log(
