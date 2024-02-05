@@ -1,4 +1,9 @@
 import { add } from "../comands/fs/add.js";
+import { cat } from "../comands/fs/cat.js";
+import { cp } from "../comands/fs/cp.js";
+import { mv } from "../comands/fs/mv.js";
+import { remove } from "../comands/fs/rm.js";
+import { rn } from "../comands/fs/rn.js";
 import { cd } from "../comands/nwd/cd.js";
 import { ls } from "../comands/nwd/ls.js";
 import { up } from "../comands/nwd/up.js";
@@ -22,6 +27,21 @@ export const handleCommands = async (line) => {
       break;
     case ".exit":
       close();
+      break;
+    case "cat":
+      cat(arg1);
+      break;
+    case "rn":
+      rn(arg1, arg2);
+      break;
+    case "cp":
+      cp(arg1, arg2);
+      break;
+    case "mv":
+      mv(arg1, arg2);
+      break;
+    case "rm":
+      remove(arg1);
       break;
     default:
       console.log(
